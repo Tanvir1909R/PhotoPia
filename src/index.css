@@ -18,7 +18,3 @@ a{
 .Container{
   padding: 0 calc((100vw - 1300px)/2);
 }
-.active{
-  color: var(--themeColor);
-  font-weight: 500;
-}
