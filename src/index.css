@@ -3,6 +3,9 @@
   margin: 0px;padding: 0px;
   box-sizing: border-box;
 }
+:root{
+  --themeColor:#FA6C30;
+}
 
 body{
   font-family: 'Poppins', sans-serif;
@@ -14,4 +17,8 @@ a{
 
 .Container{
   padding: 0 calc((100vw - 1300px)/2);
+}
+.active{
+  color: var(--themeColor);
+  font-weight: 500;
 }
