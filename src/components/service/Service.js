@@ -1,4 +1,5 @@
 import React from "react";
+import './service.scss'
 
 const Service = ({service}) => {
     const { name, thumb, price, rating, description } = service

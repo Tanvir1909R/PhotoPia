@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Service from "../../components/Service";
+import Service from "../../components/service/Service";
 import useTitle from "../../hooks/useTitle";
+import Loader from '../../components/spinner/Loader'
 import "./home.scss";
 
 const Home = () => {
@@ -98,7 +99,7 @@ const Home = () => {
               <div className="services">
                 {
                   loading ?
-                  <p>Loading...</p>
+                  <Loader/>
                   :
                   services.map((service => <Service key={service._id} service={service} />))
                 }

@@ -1,0 +1,22 @@
+.serviceBanner{
+    background-image:url(../../../public/img/services-banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 1rem;
+    margin-bottom: 40px;
+    .title{
+        text-align: center;
+        h1{
+            color: white;
+        }
+    }
+}
+
+.allServiceWrapper{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    place-items: center;
+}
