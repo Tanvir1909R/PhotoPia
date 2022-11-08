@@ -1,11 +1,28 @@
-import React from "react";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import {FcGoogle} from 'react-icons/fc'
 import { Link } from "react-router-dom";
+import { authContext } from "../../contexts/UserContext";
+import Loader from '../../components/spinner/Loader'
 import "./common.scss";
 
 const Login = () => {
+    const { loading, providerLogin } = useContext(authContext);
+    const provider = new GoogleAuthProvider()
+
+    const handleGoogleLogin = ()=>{
+        providerLogin(provider)
+        .then(res => {
+            console.log(res.user);
+        })
+    }
+
+    if(loading){
+        return <Loader/>
+    }
+
   return (
     <section>
       <div className="LoginBanner"></div>
@@ -30,7 +47,7 @@ const Login = () => {
               <Button type="submit" className="submitBtn">
                 Submit
               </Button>
-              <div className="googleLogin">
+              <div className="googleLogin" onClick={handleGoogleLogin}>
                 <p>Login With Google <FcGoogle /></p>
               </div>
               <p className="text-center">Don't have an account? <Link className="text-danger" to='/register'>Register</Link></p>

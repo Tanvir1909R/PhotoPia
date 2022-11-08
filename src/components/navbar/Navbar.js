@@ -4,7 +4,7 @@ import { authContext } from "../../contexts/UserContext";
 import "./nav.scss";
 
 const Navbar = () => {
-  const { user } = useContext(authContext);
+  const { user, LogOut } = useContext(authContext);
   const header = useRef(null);
 
   useEffect(() => {
@@ -16,6 +16,11 @@ const Navbar = () => {
       }
     });
   });
+
+  const handleLogOut = ()=>{
+    LogOut()
+  }
+
   return (
     <header ref={header}>
       <div className="Container">
@@ -30,20 +35,27 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/services">services</NavLink>
             <NavLink to="/blog">Blog</NavLink>
+            {
+              user?.email &&
+              <>
+                <NavLink to='/my-review'>My Review</NavLink>
+                <NavLink to='/add-service'>Add Service</NavLink>
+                <p className="m-0" role='button' onClick={handleLogOut}>LogOut</p>
+              </>
+              
+            }
           </nav>
           <div className="profile">
-            {
-              user?.email ?
+            {user?.email ? (
               <>
-              <div className="profileImg">
-                <img src="" alt="img" />
-              </div>
-              <p>tanvir</p>
-            </>
-            :
-            <Link to='/login'>Login</Link>
-            }
-            
+                <div className="profileImg">
+                  <img src={user.photoURL} alt="img" />
+                </div>
+                  <p>{user.displayName}</p>
+              </>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </div>
         </div>
       </div>
