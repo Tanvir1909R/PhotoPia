@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './service.scss'
 
 const Service = ({service}) => {
-    const { name, thumb, price, rating, description } = service
+    const { _id, name, thumb, price, rating, description } = service
   return (
     <div className="service">
       <img src={thumb} />
@@ -13,7 +14,7 @@ const Service = ({service}) => {
         <p>
             {description.length >= 100 && description.slice(0, 80) + '...'}
         </p>
-        <button>View more</button>
+        <Link to={`/service/${_id}`} >View more</Link> 
       </div>
     </div>
   );

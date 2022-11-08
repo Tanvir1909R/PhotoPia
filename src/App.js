@@ -5,6 +5,7 @@ import Home from './pages/home/Home'
 import Services from './pages/services/Services'
 import Blog from './pages/blog/Blog'
 import Footer from './components/footer/Footer'
+import ServiceDetails from './components/serviceDeails/ServiceDetails'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/' element={ <Home/> }/>
           <Route path='/services' element={ <Services/> }/>
           <Route path='/blog' element={ <Blog/> } />
+          <Route path='/service/:id' element={ <ServiceDetails/> } />
         </Routes>
       </main>
       <footer>

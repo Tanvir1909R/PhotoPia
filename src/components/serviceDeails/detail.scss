@@ -1,0 +1,12 @@
+.SingleServiceBanner{
+    background-image:url(../../../public/img/services-banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 1rem;
+    margin-bottom: 40px;
+    .title{
+        text-align: center;
+        color: white;
+    }
+}
