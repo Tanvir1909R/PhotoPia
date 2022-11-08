@@ -32,3 +32,19 @@ a{
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 500;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  .logoImg {
+    width: 60px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h1 {
+    font-weight: 600;
+  }
+}

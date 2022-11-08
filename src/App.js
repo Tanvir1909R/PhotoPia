@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar'
 import Home from './pages/home/Home'
 import Services from './pages/services/Services'
 import Blog from './pages/blog/Blog'
+import Footer from './components/footer/Footer'
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         </Routes>
       </main>
       <footer>
-
+        <Footer/>
       </footer>
     </>
   )

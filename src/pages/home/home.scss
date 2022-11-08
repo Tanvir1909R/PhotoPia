@@ -10,7 +10,7 @@
 }
 
 .bannerText {
-    width: 30%;
+  width: 30%;
   color: white;
   position: absolute;
   top: 50%;
@@ -36,53 +36,53 @@
     cursor: pointer;
   }
 }
-.aboutSec{
+.aboutSec {
   margin: 80px 0;
 }
-.aboutWrapper{
+.aboutWrapper {
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
-  .aboutText{
-    .aboutPera{
+  .aboutText {
+    .aboutPera {
       margin-bottom: 30px;
     }
-    .workInfo{
+    .workInfo {
       display: flex;
       align-items: center;
       margin-bottom: 30px;
-      div{
+      div {
         width: 100px;
         margin-right: 30px;
-        p{
-          color:gray;
+        p {
+          color: gray;
         }
       }
     }
-    button{
+    button {
       font-size: 1.1rem;
       font-weight: 600;
       color: white;
       background-color: var(--themeColor);
-      padding: .9rem 2rem;
+      padding: 0.9rem 2rem;
       border: none;
       border-radius: 8px;
       cursor: pointer;
     }
   }
-  .aboutImg{
-    img{
+  .aboutImg {
+    img {
       margin-bottom: 20px;
     }
   }
 }
-.clientsSec{
+.clientsSec {
   margin-bottom: 80px;
 }
-.clientsWrapper{
+.clientsWrapper {
   padding: 1rem;
-  .clients{
+  .clients {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
@@ -90,22 +90,21 @@
   }
 }
 
-
-.services{
+.services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   place-items: center;
-  .service{
+  .service {
     position: relative;
     width: 325px;
     height: 500px;
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .serviceText{
+    .serviceText {
       width: 100%;
       height: 100%;
       padding: 3rem;
@@ -118,27 +117,42 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      h1{
+      h1 {
         margin-bottom: 20px;
         text-align: center;
       }
-      small{
+      small {
         margin-bottom: 10px;
         font-size: 1rem;
         font-weight: 500;
       }
-      p{
+      p {
         margin-bottom: 20px;
         text-align: center;
       }
-      button{
-      color: white;
-      background-color: var(--themeColor);
-      padding: .9rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      button {
+        color: white;
+        background-color: var(--themeColor);
+        padding: 0.9rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
       }
     }
+  }
+}
+.seeAllBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--themeColor);
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
   }
 }

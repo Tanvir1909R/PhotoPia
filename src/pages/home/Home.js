@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Service from "../../components/Service";
 import useTitle from "../../hooks/useTitle";
 import "./home.scss";
@@ -102,6 +103,9 @@ const Home = () => {
                   services.map((service => <Service key={service._id} service={service} />))
                 }
               </div>
+            </div>
+            <div className="seeAllBtn">
+              <Link to='/services'>See All</Link>
             </div>
           </div>
         </div>
