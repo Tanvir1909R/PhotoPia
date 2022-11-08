@@ -6,12 +6,19 @@ header {
   z-index: 10;
   background-color: transparent;
   color: white;
+  transition: all .3s ease;
+}.navActive{
+  background-color: black;
+  .navWrapper{
+    padding: 1rem;
+  }
 }
 .navWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 1rem;
+  transition: all .3s ease;
   nav {
     flex: 1;
     display: flex;
