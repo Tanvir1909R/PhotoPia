@@ -1,19 +1,21 @@
-import React, { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../../contexts/UserContext";
 import "./nav.scss";
 
 const Navbar = () => {
-    const header = useRef(null);
+  const { user } = useContext(authContext);
+  const header = useRef(null);
 
-    useEffect(()=>{
-        window.addEventListener('scroll',()=>{
-            if(window.scrollY >=1){
-                header.current.classList.add('navActive')
-            }else{
-                header.current.classList.remove('navActive')
-            }
-        })
-    })
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 1) {
+        header.current.classList.add("navActive");
+      } else {
+        header.current.classList.remove("navActive");
+      }
+    });
+  });
   return (
     <header ref={header}>
       <div className="Container">
@@ -30,10 +32,18 @@ const Navbar = () => {
             <NavLink to="/blog">Blog</NavLink>
           </nav>
           <div className="profile">
-            <div className="profileImg">
-              <img src="" alt="img" />
-            </div>
-            <p>tanvir</p>
+            {
+              user?.email ?
+              <>
+              <div className="profileImg">
+                <img src="" alt="img" />
+              </div>
+              <p>tanvir</p>
+            </>
+            :
+            <Link to='/login'>Login</Link>
+            }
+            
           </div>
         </div>
       </div>

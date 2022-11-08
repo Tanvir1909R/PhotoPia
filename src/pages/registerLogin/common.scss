@@ -1,0 +1,33 @@
+.LoginBanner{
+    background-image:linear-gradient(180deg, #00000057, #00000017), url(../../../public/img/login-banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 9rem 1rem;
+    margin-bottom: 40px;
+}
+
+.formWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn{
+    background-color: var(--themeColor);
+    border: none;
+}
+.googleLogin{
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    cursor: pointer;
+    p{
+        margin: 0;
+    }
+}

@@ -75,16 +75,16 @@ const Home = () => {
               <h1>My Clients</h1>
             </div>
             <div className="clients">
-              <img src="./img/client/1.png" />
-              <img src="./img/client/2.png" />
-              <img src="./img/client/3.png" />
-              <img src="./img/client/4.png" />
-              <img src="./img/client/5.png" />
-              <img src="./img/client/6.png" />
-              <img src="./img/client/7.png" />
-              <img src="./img/client/8.png" />
-              <img src="./img/client/9.png" />
-              <img src="./img/client/10.png" />
+              <img src="./img/client/1.png" alt="logo" />
+              <img src="./img/client/2.png" alt="logo" />
+              <img src="./img/client/3.png" alt="logo" />
+              <img src="./img/client/4.png" alt="logo" />
+              <img src="./img/client/5.png" alt="logo" />
+              <img src="./img/client/6.png" alt="logo" />
+              <img src="./img/client/7.png" alt="logo" />
+              <img src="./img/client/8.png" alt="logo" />
+              <img src="./img/client/9.png" alt="logo" />
+              <img src="./img/client/10.png" alt="logo" />
             </div>
             </div>
           </div>

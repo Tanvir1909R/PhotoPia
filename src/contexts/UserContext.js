@@ -1,12 +1,12 @@
 import React, { createContext } from 'react'
 
 
-export const authContext = createContext()
+export const authContext = createContext(null);
 
 const UserContext = ({children}) => {
     const user = {
-        name:'tanvir',
-        email:'tanvir@gamil.com'
+        // name:'tanvir',
+        // email:'tanvir@gamil.com'
     }
     const userInfo = {user}
   return (
