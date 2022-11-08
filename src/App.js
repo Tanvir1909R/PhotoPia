@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer'
 import ServiceDetails from './components/serviceDeails/ServiceDetails'
 import Login from './pages/registerLogin/Login'
 import Register from './pages/registerLogin/Register'
+import AddReview from './components/addReview/AddReview'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/service/:id' element={ <ServiceDetails/> } />
           <Route path='/login' element={ <Login/> } />
           <Route path='/register' element={ <Register/> } />
+          <Route path='/add-review/:name' element={ <AddReview/> }/>
         </Routes>
       </main>
       <footer>

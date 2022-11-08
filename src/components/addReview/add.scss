@@ -1,0 +1,19 @@
+.addBanner{
+    background-image:url(../../../public/img/services-banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 7rem 1rem;
+    margin-bottom: 40px;
+    .title{
+        text-align: center;
+        h1{
+            color: white;
+        }
+    }
+}
+.addForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

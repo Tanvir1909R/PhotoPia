@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import Loader from "../../components/spinner/Loader";
+import Canvas from '../Canvas'
 import "./detail.scss";
 
 const ServiceDetails = () => {
@@ -36,10 +38,19 @@ const ServiceDetails = () => {
         <div className="Container">
           <div className="serviceDetailWrapper">
             <div className="serviceImg">
-              <img src={service.detailImg} alt={service.name} />
+              <PhotoProvider>
+                <PhotoView src={service.detailImg}>
+                  <img role='button' src={service.detailImg} alt={service.name} />
+                </PhotoView>
+              </PhotoProvider>
             </div>
             <div className="serviceDesc">
+              <h1>{service.name}</h1>
+              <p>Price: ${service.price}</p>
+              <p>Rating: {service.rating}</p>
               <p>{service.description}</p>
+
+              <Canvas service={service}/>
             </div>
           </div>
         </div>
