@@ -1,17 +1,49 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { authContext } from '../../contexts/UserContext';
 import './common.scss'
 
 const Register = () => {
+  const { createUser, updateUser } = useContext(authContext)
+  const navigate = useNavigate()
+
+  const updatePro = (name, url)=>{
+    const user = {
+      displayName:name,
+      photoURL:url
+    }
+    updateUser( user)
+    .then(res =>{})
+    .catch(e => console.log(e.message))
+  }
+
+  const handleRegister = (e)=>{
+    e.preventDefault()
+    const form = e.target;
+
+    const name = form.name.value;
+    const url = form.url.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+    .then(res =>{
+      updatePro(name, url)
+      navigate('/')
+      console.log(res.user);
+    })
+    .catch(e => console.log(e.message))
+  }
+
   return (
     <section>
       <div className="LoginBanner"></div>
       <div className="loginFrom">
         <div className="Container">
           <div className="formWrapper">
-            <Form className="w-50">
+            <Form className="w-50" onSubmit={handleRegister}>
               <h1>Please Register</h1>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>

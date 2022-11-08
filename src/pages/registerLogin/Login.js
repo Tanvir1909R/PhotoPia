@@ -2,26 +2,38 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import {FcGoogle} from 'react-icons/fc'
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { authContext } from "../../contexts/UserContext";
-import Loader from '../../components/spinner/Loader'
+import Loader from "../../components/spinner/Loader";
 import "./common.scss";
 
 const Login = () => {
-    const { loading, providerLogin } = useContext(authContext);
-    const provider = new GoogleAuthProvider()
+  const { loading, providerLogin, logIn } = useContext(authContext);
+  const provider = new GoogleAuthProvider();
 
-    const handleGoogleLogin = ()=>{
-        providerLogin(provider)
-        .then(res => {
-            console.log(res.user);
-        })
-    }
+  if (loading) {
+    return <Loader />;
+  }
+  
+  const handleGoogleLogin = () => {
+    providerLogin(provider).then((res) => {
+      console.log(res.user);
+    });
+  };
 
-    if(loading){
-        return <Loader/>
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    logIn(email, password)
+    .then(res => {
+        form.reset()
+    })
+    .catch(e => console.log(e.message))
+  };
 
   return (
     <section>
@@ -29,12 +41,16 @@ const Login = () => {
       <div className="loginFrom">
         <div className="Container">
           <div className="formWrapper">
-            <Form className="w-50">
+            <Form className="w-50" onSubmit={handleLogin}>
               <h1>Please Login</h1>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  name="email"
+                />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -42,15 +58,26 @@ const Login = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                />
               </Form.Group>
               <Button type="submit" className="submitBtn">
                 Submit
               </Button>
               <div className="googleLogin" onClick={handleGoogleLogin}>
-                <p>Login With Google <FcGoogle /></p>
+                <p>
+                  Login With Google <FcGoogle />
+                </p>
               </div>
-              <p className="text-center">Don't have an account? <Link className="text-danger" to='/register'>Register</Link></p>
+              <p className="text-center">
+                Don't have an account?{" "}
+                <Link className="text-danger" to="/register">
+                  Register
+                </Link>
+              </p>
             </Form>
           </div>
         </div>
