@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Service from "../../components/Service";
+import useTitle from "../../hooks/useTitle";
 import "./home.scss";
 
 const Home = () => {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true)
+  useTitle('Home')
+
+  useEffect(()=>{
+    setLoading(true)
+    fetch(`https://service-review-server.vercel.app/services?limit=3`)
+    .then(res => res.json())
+    .then(data =>{
+      setServices(data)
+      setLoading(false);
+    })
+  },[])
   return (
     <>
       <section>
@@ -46,6 +61,46 @@ const Home = () => {
               <div className="aboutImg">
                 <img src="./img/about-1.jpg" alt="drone with man" />
                 <img src="./img/about-2.jpg" alt="drone" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="clientsSec">
+          <div className="Container">
+            <div className="clientsWrapper">
+            <div className="title">
+              <p>Clients</p>
+              <h1>My Clients</h1>
+            </div>
+            <div className="clients">
+              <img src="./img/client/1.png" />
+              <img src="./img/client/2.png" />
+              <img src="./img/client/3.png" />
+              <img src="./img/client/4.png" />
+              <img src="./img/client/5.png" />
+              <img src="./img/client/6.png" />
+              <img src="./img/client/7.png" />
+              <img src="./img/client/8.png" />
+              <img src="./img/client/9.png" />
+              <img src="./img/client/10.png" />
+            </div>
+            </div>
+          </div>
+        </div>
+        <div className="servicesSec">
+          <div className="Container">
+            <div className="servicesWrapper">
+              <div className="title">
+                <p>Services</p>
+                <h1>My Services</h1>
+              </div>
+              <div className="services">
+                {
+                  loading ?
+                  <p>Loading...</p>
+                  :
+                  services.map((service => <Service key={service._id} service={service} />))
+                }
               </div>
             </div>
           </div>
