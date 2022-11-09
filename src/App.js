@@ -11,6 +11,7 @@ import Register from './pages/registerLogin/Register'
 import AddReview from './components/addReview/AddReview'
 import MyReview from './pages/myReview/MyReview'
 import PrivateRoute from './components/PrivateRoute'
+import Update from './pages/updateReview/Update'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/register' element={ <Register/> } />
           <Route path='/add-review/:name' element={ <AddReview/> }/>
           <Route path='/my-review' element={ <PrivateRoute><MyReview/></PrivateRoute> }/>
+          <Route path='/update-review/:id' element={ <PrivateRoute><Update /></PrivateRoute> }/>
         </Routes>
       </main>
       <footer>

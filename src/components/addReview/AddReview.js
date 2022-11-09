@@ -10,7 +10,7 @@ const AddReview = () => {
     const { email } = user
     const { name } = useParams()
  
-    const handleLogin = (e) => {
+    const handleAdd = (e) => {
         e.preventDefault();
         const form = e.target;
         const message = form.message.value;
@@ -50,7 +50,7 @@ const AddReview = () => {
             </div>
         </div>
         <div className="addForm">
-        <Form className="w-50" onSubmit={handleLogin}>
+        <Form className="w-50" onSubmit={handleAdd}>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Message</Form.Label>

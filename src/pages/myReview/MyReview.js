@@ -6,6 +6,7 @@ import Loader from "../../components/spinner/Loader";
 import { AiFillDelete } from "react-icons/ai";
 import { GrDocumentUpdate } from "react-icons/gr";
 import "./myreview.scss";
+import { Link } from "react-router-dom";
 
 const MyReview = () => {
   const { user } = useContext(authContext);
@@ -89,11 +90,12 @@ const MyReview = () => {
                         className="fs-5 me-2"
                         onClick={() => handleDelete(review._id)}
                       />
+                      <Link to={`/update-review/${review._id}`}>
                       <GrDocumentUpdate
-                        role="button"
                         className="fs-5"
                         title="Update"
                       />
+                      </Link>
                     </td>
                   </tr>
                 );
