@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/UserContext";
 import Loader from "../../components/spinner/Loader";
 import "./common.scss";
@@ -11,11 +11,14 @@ import "./common.scss";
 const Login = () => {
   const { loading, providerLogin, logIn } = useContext(authContext);
   const provider = new GoogleAuthProvider();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   if (loading) {
     return <Loader />;
   }
-  
+
   const handleGoogleLogin = () => {
     providerLogin(provider).then((res) => {
       console.log(res.user);
@@ -29,10 +32,11 @@ const Login = () => {
     const password = form.password.value;
 
     logIn(email, password)
-    .then(res => {
-        form.reset()
-    })
-    .catch(e => console.log(e.message))
+      .then((res) => {
+        navigate(from, { replace: true });
+        form.reset();
+      })
+      .catch((e) => console.log(e.message));
   };
 
   return (

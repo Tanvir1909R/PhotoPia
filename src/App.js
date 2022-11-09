@@ -10,6 +10,7 @@ import Login from './pages/registerLogin/Login'
 import Register from './pages/registerLogin/Register'
 import AddReview from './components/addReview/AddReview'
 import MyReview from './pages/myReview/MyReview'
+import PrivateRoute from './components/PrivateRoute'
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
           <Route path='/login' element={ <Login/> } />
           <Route path='/register' element={ <Register/> } />
           <Route path='/add-review/:name' element={ <AddReview/> }/>
-          <Route path='/my-review' element={ <MyReview/> }/>
+          <Route path='/my-review' element={ <PrivateRoute><MyReview/></PrivateRoute> }/>
         </Routes>
       </main>
       <footer>

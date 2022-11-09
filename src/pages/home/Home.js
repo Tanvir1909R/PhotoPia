@@ -19,6 +19,9 @@ const Home = () => {
       setLoading(false);
     })
   },[])
+  if (loading) {
+    return <Loader/>
+  }
   return (
     <>
       <section>
@@ -98,9 +101,6 @@ const Home = () => {
               </div>
               <div className="services">
                 {
-                  loading ?
-                  <Loader/>
-                  :
                   services.map((service => <Service key={service._id} service={service} />))
                 }
               </div>
