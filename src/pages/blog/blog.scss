@@ -1,0 +1,25 @@
+.BlogBanner{
+    background-image:url(../../../public/img/services-banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 1rem;
+    margin-bottom: 40px;
+    .title{
+        text-align: center;
+        h1{
+            color: white;
+        }
+    }
+}
+
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    .blog{
+        border: 1px solid rgb(194, 191, 191);
+        padding: 1rem;
+        border-radius: 9px;
+    }
+}
