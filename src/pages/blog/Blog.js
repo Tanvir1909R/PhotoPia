@@ -1,7 +1,9 @@
 import React from "react";
+import useTitle from '../../hooks/useTitle'
 import "./blog.scss";
 
 const Blog = () => {
+  useTitle('Blog')
   return (
     <section>
       <div className="BlogBanner">

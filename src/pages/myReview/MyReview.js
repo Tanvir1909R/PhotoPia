@@ -5,6 +5,7 @@ import { authContext } from "../../contexts/UserContext";
 import Loader from "../../components/spinner/Loader";
 import { AiFillDelete } from "react-icons/ai";
 import { GrDocumentUpdate } from "react-icons/gr";
+import useTitle from '../../hooks/useTitle'
 import "./myreview.scss";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const MyReview = () => {
   const { user } = useContext(authContext);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  useTitle('myReview')
   const notify = ()=>{
     toast.info('Delete is successful', {
       position: "top-right",

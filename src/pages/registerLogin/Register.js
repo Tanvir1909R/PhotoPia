@@ -3,12 +3,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../contexts/UserContext';
+import Loader from '../../components/spinner/Loader'
+import useTitle from '../../hooks/useTitle'
 import './common.scss'
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(authContext)
+  const { createUser, updateUser, loading } = useContext(authContext)
   const navigate = useNavigate()
-
+  useTitle('Register')
   const updatePro = (name, url)=>{
     const user = {
       displayName:name,
@@ -35,6 +37,10 @@ const Register = () => {
       console.log(res.user);
     })
     .catch(e => console.log(e.message))
+  }
+
+  if(loading){
+    return <Loader/>
   }
 
   return (

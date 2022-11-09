@@ -3,11 +3,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
+import useTitle from '../../hooks/useTitle'
 import "./update.scss";
 
 const Update = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  useTitle('updateReview')
   const notify = () => {
     toast.info("Update is successful", {
       position: "top-right",

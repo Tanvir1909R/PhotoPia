@@ -2,9 +2,12 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import useTitle from '../../hooks/useTitle'
 import './add.scss'
 
 const AddService = () => {
+
+  useTitle('addService')
 
     const notify=()=>{
         toast.success('Service added is successful', {
