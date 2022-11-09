@@ -12,6 +12,7 @@ import AddReview from './components/addReview/AddReview'
 import MyReview from './pages/myReview/MyReview'
 import PrivateRoute from './components/PrivateRoute'
 import Update from './pages/updateReview/Update'
+import AddService from './pages/addService/AddService'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/add-review/:name' element={ <AddReview/> }/>
           <Route path='/my-review' element={ <PrivateRoute><MyReview/></PrivateRoute> }/>
           <Route path='/update-review/:id' element={ <PrivateRoute><Update /></PrivateRoute> }/>
+          <Route path='/add-service' element={ <PrivateRoute><AddService /></PrivateRoute> }/>
         </Routes>
       </main>
       <footer>
