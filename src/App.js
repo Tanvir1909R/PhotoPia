@@ -9,6 +9,7 @@ import ServiceDetails from './components/serviceDeails/ServiceDetails'
 import Login from './pages/registerLogin/Login'
 import Register from './pages/registerLogin/Register'
 import AddReview from './components/addReview/AddReview'
+import MyReview from './pages/myReview/MyReview'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/login' element={ <Login/> } />
           <Route path='/register' element={ <Register/> } />
           <Route path='/add-review/:name' element={ <AddReview/> }/>
+          <Route path='/my-review' element={ <MyReview/> }/>
         </Routes>
       </main>
       <footer>
