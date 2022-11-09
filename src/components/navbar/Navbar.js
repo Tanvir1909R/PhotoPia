@@ -15,7 +15,7 @@ const Navbar = () => {
         header.current.classList.remove("navActive");
       }
     });
-  },[window.scroll]);
+  },[]);
 
   const handleLogOut = ()=>{
     LogOut()

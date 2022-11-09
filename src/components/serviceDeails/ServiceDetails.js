@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import Loader from "../../components/spinner/Loader";
-import Canvas from '../Canvas'
+import Canvas from '../review/Canvas'
 import "./detail.scss";
 
 const ServiceDetails = () => {
@@ -18,7 +18,7 @@ const ServiceDetails = () => {
         setService(data);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   if (loading) {
     return <Loader />;

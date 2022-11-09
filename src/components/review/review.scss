@@ -1,0 +1,27 @@
+.singleReview{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 9px;
+    padding: .4rem;
+    .reviewImg{
+        display: flex;
+        align-items: center;
+        img{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        p{
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+    .reviewDesc{
+        padding: 0 3rem;
+        p{
+            margin-bottom: 0;
+        }
+    }
+}

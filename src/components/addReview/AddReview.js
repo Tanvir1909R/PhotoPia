@@ -18,6 +18,8 @@ const AddReview = () => {
 
         const review ={ 
             serviceName:name,
+            photo: user.photoURL,
+            name:user.displayName,
             email,
             message,
             rating
@@ -70,7 +72,7 @@ const AddReview = () => {
               <Button type="submit" className="submitBtn">
                 Submit
               </Button>
-            </Form>
+        </Form>
         </div>
     </section>
   )
