@@ -53,17 +53,17 @@ const Register = () => {
               <h1>Please Register</h1>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter Name" name="name" />
+                <Form.Control type="text" placeholder="Enter Name" name="name" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicUrl">
                 <Form.Label>PhotoUrl</Form.Label>
-                <Form.Control type="text" placeholder="Enter url" name="url" />
+                <Form.Control type="text" placeholder="Enter url" name="url" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" />
+                <Form.Control type="email" placeholder="Enter email" name="email" required />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -71,7 +71,7 @@ const Register = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" />
+                <Form.Control type="password" placeholder="Password" name="password" required />
               </Form.Group>
                 
 

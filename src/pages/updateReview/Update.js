@@ -33,7 +33,7 @@ const Update = () => {
       rating,
     };
 
-    fetch(`https://service-review-server.vercel.app/reviews/${id}`, {
+    fetch(`https://service-review-server.vercel.app/myreviews/${id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",
@@ -69,6 +69,7 @@ const Update = () => {
               type="text"
               placeholder="Enter message"
               name="message"
+              required
             />
           </Form.Group>
 
@@ -78,6 +79,7 @@ const Update = () => {
               type="text"
               placeholder="Enter Rating"
               name="rating"
+              required
             />
           </Form.Group>
           <Button type="submit" className="submitBtn">

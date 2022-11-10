@@ -69,32 +69,32 @@ const AddService = () => {
         <Form className="w-50" onSubmit={handleAdd}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Service Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter Name" name="name" />
+                <Form.Control type="text" placeholder="Enter Name" name="name" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicUrl">
                 <Form.Label>PhotoUrl Thumb</Form.Label>
-                <Form.Control type="text" placeholder="Enter url" name="urlThumb" />
+                <Form.Control type="text" placeholder="Enter url" name="urlThumb" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicUrl">
                 <Form.Label>PhotoUrl for Details</Form.Label>
-                <Form.Control type="text" placeholder="Enter url" name="urlDetails" />
+                <Form.Control type="text" placeholder="Enter url" name="urlDetails" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Price</Form.Label>
-                <Form.Control type="text" placeholder="Enter price" name="price" />
+                <Form.Control type="text" placeholder="Enter price" name="price" required />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Rating</Form.Label>
-                <Form.Control type="text" placeholder="Rating" name="rating" />
+                <Form.Control type="text" placeholder="Rating" name="rating" required />
               </Form.Group>
                 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Description</Form.Label>
-                <Form.Control as='textarea' type="text" placeholder="Description" name="description" />
+                <Form.Control as='textarea' type="text" placeholder="Description" name="description" required />
               </Form.Group>
 
               <Button type="submit" className="submitBtn">

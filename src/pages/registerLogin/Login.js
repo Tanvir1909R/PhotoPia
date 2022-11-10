@@ -41,7 +41,7 @@ const Login = () => {
       .then((res) => {
        const currentUser = { email:res.user.email}
         //
-        fetch('http://localhost:7000/jwt',{
+        fetch('https://service-review-server.vercel.app/jwt',{
           method:'post',
           headers:{
             'content-type':'application/json'
@@ -75,6 +75,7 @@ const Login = () => {
                   type="email"
                   placeholder="Enter email"
                   name="email"
+                  required
                 />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
@@ -87,6 +88,7 @@ const Login = () => {
                   type="password"
                   placeholder="Password"
                   name="password"
+                  required
                 />
               </Form.Group>
               <Button type="submit" className="submitBtn">
