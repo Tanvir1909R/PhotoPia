@@ -22,21 +22,12 @@ const Login = () => {
   }
 
   const handleGoogleLogin = () => {
-    providerLogin(provider).then((res) => {
+    providerLogin(provider)
+    .then((res) => {
       const currentUser = {
         email: res.user.email,
       };
-      fetch("http://localhost:7000/jwt", {
-        method: "post",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(currentUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          localStorage.setItem("token", data.token);
-        });
+      console.log(currentUser);
     });
   };
 
@@ -52,20 +43,6 @@ const Login = () => {
           email: res.user.email,
         };
         console.log(currentUser);
-        // get jwt
-        fetch("http://localhost:7000/jwt", {
-          method: "post",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            localStorage.setItem("token", data.token);
-            navigate(from, { replace: true });
-            form.reset();
-          });
       })
       .catch((e) => console.log(e.message));
   };

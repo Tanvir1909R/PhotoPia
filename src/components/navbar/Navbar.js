@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="logoImg">
               <img src="./img/logo.png" alt="" />
             </div>
-            <h1>PhotoPia</h1>
+            <h1 className="m-0">PhotoPia</h1>
           </div>
           <nav>
             <NavLink to="/">Home</NavLink>
