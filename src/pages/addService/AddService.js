@@ -41,7 +41,7 @@ const AddService = () => {
             description,
         }
 
-        fetch(`http://localhost:7000/services`,{
+        fetch(`https://service-review-server.vercel.app/services`,{
             method:'post',
             headers:{
                 'content-type':'application/json'

@@ -10,7 +10,7 @@ import "./myreview.scss";
 import { Link } from "react-router-dom";
 
 const MyReview = () => {
-  const { user } = useContext(authContext);
+  const { user, LogOut } = useContext(authContext);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   useTitle('myReview')
@@ -30,9 +30,18 @@ const MyReview = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://service-review-server.vercel.app/reviews?email=${user.email}`
+      `http://localhost:7000/reviews?email=${user.email}`,{
+        headers:{
+          authorization:`bearer ${localStorage.getItem('token')}`
+        }
+      }
     )
-      .then((res) => res.json())
+      .then((res) => {
+        if(res.status === 401 || res.status === 403){
+          return LogOut()
+        }
+        return res.json()
+      })
       .then((data) => {
         setReviews(data);
         setLoading(false);

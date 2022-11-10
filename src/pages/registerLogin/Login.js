@@ -6,13 +6,13 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/UserContext";
 import Loader from "../../components/spinner/Loader";
-import useTitle from '../../hooks/useTitle'
+import useTitle from "../../hooks/useTitle";
 import "./common.scss";
 
 const Login = () => {
   const { loading, providerLogin, logIn } = useContext(authContext);
   const provider = new GoogleAuthProvider();
-  useTitle('Login')
+  useTitle("Login");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -23,7 +23,20 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     providerLogin(provider).then((res) => {
-      console.log(res.user);
+      const currentUser = {
+        email: res.user.email,
+      };
+      fetch("http://localhost:7000/jwt", {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", data.token);
+        });
     });
   };
 
@@ -35,8 +48,24 @@ const Login = () => {
 
     logIn(email, password)
       .then((res) => {
-        navigate(from, { replace: true });
-        form.reset();
+        const currentUser = {
+          email: res.user.email,
+        };
+        console.log(currentUser);
+        // get jwt
+        fetch("http://localhost:7000/jwt", {
+          method: "post",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+            navigate(from, { replace: true });
+            form.reset();
+          });
       })
       .catch((e) => console.log(e.message));
   };
