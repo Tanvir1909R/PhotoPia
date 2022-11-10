@@ -46,7 +46,7 @@ const UserContext = ({children}) => {
     }
   },[auth])
 
-  const userInfo = { user, loading, providerLogin, createUser, LogOut, updateUser, logIn }
+  const userInfo = { user, loading, providerLogin, createUser, LogOut, updateUser, logIn,setLoading }
   return (
     <authContext.Provider value={userInfo}>
         {children}
