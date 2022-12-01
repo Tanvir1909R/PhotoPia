@@ -1,5 +1,5 @@
-# Project name => Service-review
-## Live website link => [service-review](https://service-review-fb1fc.web.app/)
+# Project name => PhotoPia
+## Live website link => [PhotoPia](https://service-review-fb1fc.web.app/)
 
 
 **What's on the website?**
